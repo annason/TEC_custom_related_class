@@ -16,17 +16,17 @@ $related = new Gdzieciak_related_events($event_id);
 new Gdzieciak_related_events($event_id, $number_of_related, $price_range_percents)
 ```
 
-**$event_id** (int) - reguired / ID of main event (tribe_events post type)
+**$event_id** (int) - required / ID of main event (tribe_events post type)
 
 **$number_of_related** (int) - optional / default: 3 / Number of related posts to show
 
-**$price_range_percents** (array) - optional / default: [5,30] ] / Array with number that would be used as a percent for creating price range for comparison.
-First one is percent for cost ranges (i.e. $10-25), thus by default comparison range would be created based on small +/- 3% differance. The second one is a percent for prices that are numbers. Any other type of price will be ignored.
+**$price_range_percents** (array) - optional / default: [5,30]  / Array with number that would be used as a percent for creating price range for comparison.
+First one is percent for cost ranges (i.e. $10-25), thus by default comparison range would be created based on small +/- 5% differance. The second one is a percent for creating comparison range prices that are numbers. Any other type of price will be ignored.
 
 
 ### Method for related
 
-Use show_related() method in place where you want to display your related events.
+Use _show_related()_ method in place where you want to display your related events.
 
 ```php
 echo $related->show_related();
@@ -35,7 +35,7 @@ echo $related->show_related();
 ### Static methods
 
 You can use static _cost_int($cost)_ method to discard non-numerical values and return an array or an int,
-_generate_cost_range($cost, $range_percents_array)_ enables you to generate price range withouth creating an object from class, if you would need ir for other purpose.
+_generate_cost_range($cost, $range_percents_array)_ enables you to generate price range withouth creating an object from class, if you would need it for other purposes.
 
 
 ## HTML structure
