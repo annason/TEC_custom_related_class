@@ -58,10 +58,13 @@ $html = '
         
     </div>';
 ```
+
 You can change it as you like.
 
 **$case** is a number of relation level case, 
-**$data_range** is a final price range for comparison, saved as data value for debugging purposes (it would be blank if event doesn't have any price.)
+
+**$data_range** is a final price range for comparison, saved as data value for debugging purposes (it would be blank if event doesn't have any price)
+
 **$id** is a post id of related event; you can use it with standard wordpress functions.
 
 
@@ -82,5 +85,29 @@ You can change it as you like.
 ///////////// case 11: all cats
 ////////////// case 12: any event cat
 ```
+
+
+## Example class usage
+
+```php
+
+<?php $related = new Gdzieciak_related_events(get_the_ID()); ?>
+
+<?php if($related->any_pre_related() > 2):?>
+
+    <h1>Related</h1>
+
+    <div id="related_events"> 
+
+        <?php echo $related->show_related(); ?>
+
+    </div> 
+
+<?php endif; ?>
+
+
+```
+
+
 
 
