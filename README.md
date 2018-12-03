@@ -20,6 +20,6 @@ new Gdzieciak_related_events($event_id, $number_of_related, $price_range_percent
 
 **$number_of_related** (int) - optional / default: 3 / Number of related posts to show
 
-**$price_range_percents** (array) - optional / default: [5,30] ] / Array with number that would be used as percent for creating price range for comparison.
-First one is percent for cost ranges (i.e. $10-25), thus by default comparison range would be created based on small +/- 3% differance. The scond one is percent for prices that are numbers. Any other type of proce would be ignored.
+**$price_range_percents** (array) - optional / default: [5,30] ] / Array with number that would be used as a percent for creating price range for comparison.
+First one is percent for cost ranges (i.e. $10-25), thus by default comparison range would be created based on small +/- 3% differance. The second one is a percent for prices that are numbers. Any other type of price will be ignored.
 
