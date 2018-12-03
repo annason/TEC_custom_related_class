@@ -26,8 +26,18 @@ First one is percent for cost ranges (i.e. $10-25), thus by default comparison r
 
 ### Method for related
 
-Use show_related() methen in place where you want diplasy related events.
+Use show_related() method in place where you want to display your related events.
 
 ```php
 echo $related->show_related();
 ```
+
+### Static methods
+
+You can use static cost_int($cost) method to discard non-numerical values and return an array or an int,
+generate_cost_range($cost, $range_percents_array) enables you to generate price range withouth creating an object from class, if you would need ir for other purpose.
+
+
+## HTML structure
+
+
