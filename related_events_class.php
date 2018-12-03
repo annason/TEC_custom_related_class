@@ -338,7 +338,8 @@ class Gdzieciak_related_events {
         return $this->get_ids_of_pre_related("howmany");
     }
 
-    public function show_related($howmany = null, $template = false) {
+
+    public function show_related($howmany = null) {
 
         if(!isset($howmany)) { 
             $howmany = $this->howmany;
@@ -425,7 +426,6 @@ class Gdzieciak_related_events {
             $catsonly__any[] = $postid.'_12';
         }
 
-
     }
 
     $all_related = array_merge(
@@ -450,28 +450,19 @@ class Gdzieciak_related_events {
         if($this->cost_range($this->price) != 0) {$data_range = implode('-', $this->cost_range($this->price));} else {$data_range = $this->cost_range($this->price);}
 
         $html = '
-    <div class="realted-item col-xs-6 col-sm-4" data-case-related="'.$case.'" data-price-range="'.$data_range.'">
+            <div class="realted-item data-case-related="'.$case.'" data-price-range="'.$data_range.'">
 
-        <div class="post-image">
-            <img alt=" '.get_the_title($id).'. Wydarzenie dla dzieci w Szczecinie." src="
-            '.img_url_if_cloudinary('thumbnail', 293, 162, $id).' ">
-        </div>
+                <div class="post-image">
+                    <img alt=" '.get_the_title($id).'" src="
+                    '.get_the_post_thumbnail_url($id).' ">
+                </div>
 
+                <div class="post-title">
+                    <a href="'.get_permalink($id).'">'.get_the_title($id).'</a>
+                </div>
+                
+            </div>';
 
-        <div class="post-content-details">
-            <div class="post-title">
-                <h4><a href="'.get_permalink($id).'">'.get_the_title($id).'</a></h4>
-            </div>
-        </div>
-
-        <div class="post-info">
-            <span class="post-category">
-            <i class="far fa-calendar"></i> '.tec_generate_full_date("long", $id, "noyear", "time-icon", "-", false, true).'
-            </span>
-        </div>
-    </div>';
-
-        
         
         $output .= $html;
 
@@ -502,4 +493,4 @@ class Gdzieciak_related_events {
 /////////// case 9: all tags
 //////////// case 10: any tag
 ///////////// case 11: all cats
-///////////// /case 12: any event cat
+////////////// case 12: any event cat
